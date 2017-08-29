@@ -4,7 +4,7 @@ echo "Setting up liquibase"
 cat <<CONF > /liquibase.properties
   driver: org.mariadb.jdbc.Driver
   classpath:/usr/local/bin/mariadb-java-client-2.1.0.jar
-  url: jdbc:mariadb://$DB_IP:3306/$DB_NAME
+  url: jdbc:mariadb://$DB_IP:3306/$DB_NAME?createDatabaseIfNotExist=true
   username: $DB_USER
   password: $DB_PASS
 CONF
