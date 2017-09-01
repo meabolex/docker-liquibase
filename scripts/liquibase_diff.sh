@@ -7,13 +7,13 @@
 
 TS=$(date +%s)
 echo "Generating diff ...."
-liquibase --changeLogFile="/changelogs/diff/$TS-$CHANGELOG_FILE.xml" diffChangeLog \
+liquibase --changeLogFile="/changelogs/diff/$TS-$CHANGELOG_FILE" diffChangeLog \
   --referenceUrl=$CONNECTION_STRING \
   --referenceUsername=$DB_USER \
   --referencePassword=$DB_PASS \
   -Dappuser_password="$APPUSER_PASSWORD"
 
-echo "Diff generated into: /changelogs/diff/$TS-$CHANGELOG_FILE.xml"
+echo "Diff generated into: /changelogs/diff/$TS-$CHANGELOG_FILE"
 
 if [ ! -z "$LIQUIBASE_INCLUSION_FILE" ] ; then
   if [ -f "/changelogs/$LIQUIBASE_INCLUSION_FILE" ] ; then
