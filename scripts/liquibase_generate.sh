@@ -6,4 +6,4 @@ TS=$(date +%s)
 echo "Generating changelog ...."
 liquibase --diffTypes="$DIFF_TYPES" --defaultSchemaName="$DB_SCHEMA_NAME" --changeLogFile="/changelogs/$TS-$CHANGELOG_FILE.xml" generateChangeLog -Dappuser_password="$APPUSER_PASSWORD"
 
-echo "Changelog generated into: /changelogs/$TS-changelog_diff.xml"
+echo "Changelog generated into: /changelogs/$TS-$CHANGELOG_FILE.xml"
