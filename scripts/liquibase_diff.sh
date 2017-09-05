@@ -2,7 +2,6 @@
 : ${CONNECTION_STRING? "please provide the connection string of the base database"}
 : ${DB_USER?"Please provide the database user name"}
 : ${DB_PASS?"Please provide the database password"}
-: ${APPUSER_PASSWORD?"Please enter the password for the app user"}
 : ${CHANGELOG_FILE:="changelog_diff.xml"}
 
 TS=$(date +%s)
@@ -11,7 +10,6 @@ liquibase --changeLogFile="/changelogs/diff/$TS-$CHANGELOG_FILE" diffChangeLog \
   --referenceUrl=$CONNECTION_STRING \
   --referenceUsername=$DB_USER \
   --referencePassword=$DB_PASS \
-  -Dappuser_password="$APPUSER_PASSWORD"
 
 echo "Diff generated into: /changelogs/diff/$TS-$CHANGELOG_FILE"
 
