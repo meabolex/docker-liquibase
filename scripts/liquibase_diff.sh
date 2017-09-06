@@ -6,7 +6,7 @@
 
 TS=$(date +%s)
 echo "Generating diff ...."
-liquibase --changeLogFile="/changelogs/diff/$TS-$CHANGELOG_FILE" diffChangeLog \
+liquibase --logLevel=debug --changeLogFile="/changelogs/diff/$TS-$CHANGELOG_FILE" diffChangeLog \
   --referenceUrl=$CONNECTION_STRING \
   --referenceUsername=$DB_USER \
   --referencePassword=$DB_PASS \
