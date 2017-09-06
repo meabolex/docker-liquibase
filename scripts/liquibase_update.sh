@@ -5,4 +5,4 @@
 : ${DB_NAME?"Please enter the database name"}
 
 echo "Applying changes to the database. Changelog: $CHANGELOG_FILE"
-liquibase --changeLogFile="/changelogs/$CHANGELOG_FILE" update -Dappuser_password_hash="$APPUSER_PASSWORD_HASH" -Dappuser_username="$APPUSER_NAME" -Ddb_name="$DB_NAME"
+liquibase --logLevel=debug --changeLogFile="/changelogs/$CHANGELOG_FILE" update -Dappuser_password_hash="$APPUSER_PASSWORD_HASH" -Dappuser_username="$APPUSER_NAME" -Ddb_name="$DB_NAME"
