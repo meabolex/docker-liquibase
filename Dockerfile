@@ -1,4 +1,4 @@
-FROM java
+FROM openjdk:8-jre-slim
 
 MAINTAINER mark.mixson@ossys.com
 
